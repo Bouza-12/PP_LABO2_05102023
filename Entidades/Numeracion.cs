@@ -38,9 +38,9 @@ namespace Entidades
 
         public abstract Numeracion CambiarSistemaDeNumeracion(ESistema sistema);
 
-        protected bool EsNumeracionValida(string valor)
+        protected virtual bool EsNumeracionValida(string valor)
         {
-            return valor is not null && !(valor.Contains(" "));
+            return String.IsNullOrWhiteSpace(valor);
         }
 
         public static bool operator ==(Numeracion n1, Numeracion n2)
