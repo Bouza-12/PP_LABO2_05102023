@@ -23,7 +23,7 @@ namespace Entidades
         }
         public override Numeracion CambiarSistemaDeNumeracion(ESistema sistema)
         {
-            if(sistema == ESistema.Binario)
+            if (sistema == ESistema.Binario)
             {
                 return this.DecimalABinario();
             }
@@ -61,7 +61,7 @@ namespace Entidades
                 }
                 return new SistemaBinario(msgError);
             }
-        
+
 
         }
 
@@ -73,4 +73,5 @@ namespace Entidades
         {
             return new SistemaDecimal(valor);
         }
+    }
 }
