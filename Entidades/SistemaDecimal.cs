@@ -32,7 +32,7 @@ namespace Entidades
 
         protected override bool EsNumeracionValida(string valor)
         {
-            return String.IsNullOrWhiteSpace(valor) && Double.TryParse(valor, out double ValorNumerico);
+            return Double.TryParse(valor, out double ValorNumerico) && base.EsNumeracionValida(valor);
         }
         private SistemaBinario DecimalABinario()
         {

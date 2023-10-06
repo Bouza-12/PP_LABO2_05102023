@@ -68,18 +68,18 @@ namespace Entidades
                 switch(operador)
                 {
                     case '+':
-                        MapeaResultado(PrimerOperando.ValorNumerico + SegundoOperando.ValorNumerico);
+                        this.resultado = MapeaResultado(PrimerOperando.ValorNumerico + SegundoOperando.ValorNumerico);
                         break;
                     case '-':
-                        MapeaResultado(PrimerOperando.ValorNumerico - SegundoOperando.ValorNumerico);
+                        this.resultado = MapeaResultado(PrimerOperando.ValorNumerico - SegundoOperando.ValorNumerico);
                         break;
                     case '*':
-                        MapeaResultado(PrimerOperando.ValorNumerico * SegundoOperando.ValorNumerico);
+                        this.resultado = MapeaResultado(PrimerOperando.ValorNumerico * SegundoOperando.ValorNumerico);
                         break;
                     case '/':
                         if(SegundoOperando.ValorNumerico != 0)
                         {
-                            MapeaResultado(PrimerOperando.ValorNumerico / SegundoOperando.ValorNumerico);
+                            this.resultado = MapeaResultado(PrimerOperando.ValorNumerico / SegundoOperando.ValorNumerico);
                         }
                         else
                         {
@@ -106,13 +106,14 @@ namespace Entidades
             }
         }
 
-        public void ActualizarHistorialDeOperaciones(char operando)
+        public void ActualizaHistorialDeOperaciones(char operando)
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Sistema {Sistema}");
             sb.AppendLine($"Primer Operando: {PrimerOperando.Valor}");
             sb.AppendLine($"Operador: {operando}");
             sb.AppendLine($"Segundo Operando: {SegundoOperando.Valor}");
+            Calcular(operando);
             sb.AppendLine($"Resultado {Resultado.Valor}");
         }
         public void EliminarHistorialDeOperaciones()

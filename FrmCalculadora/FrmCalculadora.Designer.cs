@@ -38,12 +38,13 @@ namespace FrmCalculadora
             lblOperador = new Label();
             lblSegundoOperando = new Label();
             txtPrimerOperando = new TextBox();
-            cboOperador = new ComboBox();
+            cmbOperacion = new ComboBox();
             txtSegundoOperando = new TextBox();
             btnOperar = new Button();
             btnLimpiar = new Button();
             btnCerrar = new Button();
-            listBox1 = new ListBox();
+            lstHistorial = new ListBox();
+            lblHistorial = new Label();
             grpSistema.SuspendLayout();
             SuspendLayout();
             // 
@@ -78,6 +79,7 @@ namespace FrmCalculadora
             rdbBinario.TabStop = true;
             rdbBinario.Text = "Binario";
             rdbBinario.UseVisualStyleBackColor = true;
+            rdbBinario.CheckedChanged += rdbBinario_CheckedChanged;
             // 
             // rdbDecimal
             // 
@@ -89,6 +91,7 @@ namespace FrmCalculadora
             rdbDecimal.TabStop = true;
             rdbDecimal.Text = "Decimal";
             rdbDecimal.UseVisualStyleBackColor = true;
+            rdbDecimal.CheckedChanged += rdbDecimal_CheckedChanged;
             // 
             // lblPrimerOperando
             // 
@@ -124,13 +127,13 @@ namespace FrmCalculadora
             txtPrimerOperando.Size = new Size(100, 23);
             txtPrimerOperando.TabIndex = 5;
             // 
-            // cboOperador
+            // cmbOperacion
             // 
-            cboOperador.FormattingEnabled = true;
-            cboOperador.Location = new Point(157, 217);
-            cboOperador.Name = "cboOperador";
-            cboOperador.Size = new Size(51, 23);
-            cboOperador.TabIndex = 6;
+            cmbOperacion.FormattingEnabled = true;
+            cmbOperacion.Location = new Point(157, 217);
+            cmbOperacion.Name = "cmbOperacion";
+            cmbOperacion.Size = new Size(51, 23);
+            cmbOperacion.TabIndex = 6;
             // 
             // txtSegundoOperando
             // 
@@ -147,6 +150,7 @@ namespace FrmCalculadora
             btnOperar.TabIndex = 8;
             btnOperar.Text = "Operar";
             btnOperar.UseVisualStyleBackColor = true;
+            btnOperar.Click += btnOperar_Click;
             // 
             // btnLimpiar
             // 
@@ -156,6 +160,7 @@ namespace FrmCalculadora
             btnLimpiar.TabIndex = 9;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // btnCerrar
             // 
@@ -167,26 +172,37 @@ namespace FrmCalculadora
             btnCerrar.UseVisualStyleBackColor = true;
             btnCerrar.Click += btnCerrar_Click;
             // 
-            // listBox1
+            // lstHistorial
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(400, 79);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(249, 229);
-            listBox1.TabIndex = 11;
+            lstHistorial.FormattingEnabled = true;
+            lstHistorial.ItemHeight = 15;
+            lstHistorial.Location = new Point(400, 79);
+            lstHistorial.Name = "lstHistorial";
+            lstHistorial.Size = new Size(249, 229);
+            lstHistorial.TabIndex = 11;
+            // 
+            // lblHistorial
+            // 
+            lblHistorial.AutoSize = true;
+            lblHistorial.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            lblHistorial.Location = new Point(486, 57);
+            lblHistorial.Name = "lblHistorial";
+            lblHistorial.Size = new Size(66, 19);
+            lblHistorial.TabIndex = 12;
+            lblHistorial.Text = "Historial";
             // 
             // FrmCalculadora
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(681, 342);
-            Controls.Add(listBox1);
+            Controls.Add(lblHistorial);
+            Controls.Add(lstHistorial);
             Controls.Add(btnCerrar);
             Controls.Add(btnLimpiar);
             Controls.Add(btnOperar);
             Controls.Add(txtSegundoOperando);
-            Controls.Add(cboOperador);
+            Controls.Add(cmbOperacion);
             Controls.Add(txtPrimerOperando);
             Controls.Add(lblSegundoOperando);
             Controls.Add(lblOperador);
@@ -201,6 +217,7 @@ namespace FrmCalculadora
             StartPosition = FormStartPosition.CenterScreen;
             Text = "PrimerParcial";
             FormClosing += FrmCalculadora_FormClosing;
+            Load += FrmCalculadora_Load;
             grpSistema.ResumeLayout(false);
             grpSistema.PerformLayout();
             ResumeLayout(false);
@@ -217,11 +234,12 @@ namespace FrmCalculadora
         private Label lblOperador;
         private Label lblSegundoOperando;
         private TextBox txtPrimerOperando;
-        private ComboBox cboOperador;
+        private ComboBox cmbOperacion;
         private TextBox txtSegundoOperando;
         private Button btnOperar;
         private Button btnLimpiar;
         private Button btnCerrar;
-        private ListBox listBox1;
+        private ListBox lstHistorial;
+        private Label lblHistorial;
     }
 }

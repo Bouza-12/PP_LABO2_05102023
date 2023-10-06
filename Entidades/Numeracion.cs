@@ -26,7 +26,9 @@ namespace Entidades
 
         private void InicializarValor(string valor)
         {
-            if(Double.TryParse(valor, out double valorDouble) && EsNumeracionValida(valor))
+            bool uno = Double.TryParse(valor, out double valorDouble);
+            bool do2 = EsNumeracionValida(valor);
+            if (Double.TryParse(valor, out double valorDouble2) && EsNumeracionValida(valor))
             {
                 this.valor = valor;
             }
@@ -40,7 +42,7 @@ namespace Entidades
 
         protected virtual bool EsNumeracionValida(string valor)
         {
-            return String.IsNullOrWhiteSpace(valor);
+            return !(string.IsNullOrWhiteSpace(valor));
         }
 
         public static bool operator ==(Numeracion n1, Numeracion n2)
