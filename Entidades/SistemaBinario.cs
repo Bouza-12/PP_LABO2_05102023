@@ -12,7 +12,7 @@ namespace Entidades
         {
             get
             {
-                return Double.Parse(valor);
+                return (double)BinarioADecimal();
             }
         }
 
@@ -31,7 +31,7 @@ namespace Entidades
 
         protected override bool EsNumeracionValida(string valor)
         {
-            return String.IsNullOrWhiteSpace(valor) && EsSistemaBinarioValido(valor);
+            return EsSistemaBinarioValido(valor) && base.EsNumeracionValida(valor);
         }
 
         private bool EsSistemaBinarioValido(string valor)

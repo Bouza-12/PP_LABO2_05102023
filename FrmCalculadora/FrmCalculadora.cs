@@ -57,8 +57,7 @@ namespace FrmCalculadora
         private void MostrarHistorial()
         {
             this.lstHistorial.DataSource = null;
-            this.lstHistorial.DataSource =
-            this.calculadora.Operaciones;
+            this.lstHistorial.DataSource = this.calculadora.Operaciones;
         }
 
         private void rdbBinario_CheckedChanged(object sender, EventArgs e)

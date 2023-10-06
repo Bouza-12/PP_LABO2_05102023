@@ -178,7 +178,7 @@ namespace FrmCalculadora
             lstHistorial.ItemHeight = 15;
             lstHistorial.Location = new Point(400, 79);
             lstHistorial.Name = "lstHistorial";
-            lstHistorial.Size = new Size(249, 229);
+            lstHistorial.Size = new Size(367, 229);
             lstHistorial.TabIndex = 11;
             // 
             // lblHistorial
@@ -195,7 +195,7 @@ namespace FrmCalculadora
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(681, 342);
+            ClientSize = new Size(779, 342);
             Controls.Add(lblHistorial);
             Controls.Add(lstHistorial);
             Controls.Add(btnCerrar);

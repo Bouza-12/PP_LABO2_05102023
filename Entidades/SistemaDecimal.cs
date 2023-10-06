@@ -39,7 +39,7 @@ namespace Entidades
             {
                 List<int> binario = new List<int>();
                 int valor = (int)ValorNumerico;
-                Math.Abs(valor);
+                //Math.Abs(valor);
                 if (valor >= 0)
                 {
 

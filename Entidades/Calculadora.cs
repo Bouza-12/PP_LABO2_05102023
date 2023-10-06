@@ -110,11 +110,12 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Sistema {Sistema}");
-            sb.AppendLine($"Primer Operando: {PrimerOperando.Valor}");
-            sb.AppendLine($"Operador: {operando}");
-            sb.AppendLine($"Segundo Operando: {SegundoOperando.Valor}");
-            Calcular(operando);
-            sb.AppendLine($"Resultado {Resultado.Valor}");
+            sb.AppendLine($"{PrimerOperando.Valor}");
+            sb.AppendLine($"{operando}");
+            sb.AppendLine($"{SegundoOperando.Valor}");
+            sb.AppendLine($" = {Resultado.Valor}");
+
+            operaciones.Add(sb.ToString() );
         }
         public void EliminarHistorialDeOperaciones()
         {
